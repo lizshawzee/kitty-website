@@ -13,7 +13,7 @@ h1 {
   color: #520673;
   text-shadow: 5px 3px 5px white;
   font-family: "Lobster", cursive;
-  font-size: 40px;
+  font-size: 50px;
   text-align: center;
 }
 
@@ -27,8 +27,8 @@ body {
   width: 600px;
   margin: 0 auto;
   background-color: #FAF6AC;
-  padding: 20px 30px 100px 30px;
-  border: 7px solid white;
+  padding: 20px 50px 150px 50px;
+  border: 10px solid white;
 }
 
 img {
