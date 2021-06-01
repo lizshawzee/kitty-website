@@ -14,26 +14,35 @@ myImage.onclick = function() {
 
 //let myButton = document.getElementById('userButton');
 let myButton = document.querySelector('#userButton');
-let myHeading = document.querySelector('h1');
+let myHeading = document.querySelector('#mainHeading');
+const originalHeading = myHeading.textContent
 
 const kittyHeading = "Kitties are Cool, "
 function setUserName() {
   let myName = prompt('Please enter your name.');
-  if(!myName) {
-    setUserName();
-  } else {
+console.log(myName)
+  if(null === myName) {
+    return
+  }
+  if("" === myName) {
+      myHeading.textContent = originalHeading
+      return
+  }
+
+    // setUserName();
+  //} else {
     localStorage.setItem('name', myName);
     myHeading.textContent = kittyHeading + myName;
-  }
+    return myName
 }
-
+/*
 if(!localStorage.getItem('name')) {
   setUserName();
 } else {
   let storedName = localStorage.getItem('name');
   myHeading.textContent = kittyHeading + storedName;
 }
-
+*/
 myButton.onclick = function() {
-  setUserName();
+  setUserName()
 }
