@@ -1,3 +1,4 @@
+// First Image has click to change images
 let myImage = document.querySelector('img');
 
 myImage.onclick = function() {
@@ -9,15 +10,23 @@ myImage.onclick = function() {
     }
 }
 
+// Personalized welcome message code
+
+//let myButton = document.getElementById('userButton');
 let myButton = document.querySelector('#userButton');
 let myHeading = document.querySelector('h1');
 
 const kittyHeading = "Kitties are Cool, "
 function setUserName() {
   let myName = prompt('Please enter your name.');
-  localStorage.setItem('name', myName);
-  myHeading.textContent = kittyHeading + myName;
+  if(!myName) {
+    setUserName();
+  } else {
+    localStorage.setItem('name', myName);
+    myHeading.textContent = kittyHeading + myName;
+  }
 }
+
 if(!localStorage.getItem('name')) {
   setUserName();
 } else {
